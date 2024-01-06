@@ -49,6 +49,76 @@ function setup() {
 
 function draw() {
     background("lightgrey");
+   
+    if(touches.length>0){
+        console.log("x position"+touches[0].x);
+        if(touches[0].x>97 && touches[0].x<220 && touches[0].y>48 && touches[0].y<171 ){
+            console.log("tile 1 touched");
+            tileFlip1(box1);
+            
+        }
+        else if(touches[0].x>246 && touches[0].x<372 && touches[0].y>48 && touches[0].y<171 ){
+            console.log("tile 1 touched");
+            tileFlip2(box2);
+            
+        }
+        else if(touches[0].x>396 && touches[0].x<520 && touches[0].y>48 && touches[0].y<171 ){
+            console.log("tile 1 touched");
+            tileFlip3(box3);
+            
+        }
+        else if(touches[0].x>97 && touches[0].x<220 && touches[0].y>199 && touches[0].y<322 ){
+            console.log("tile 1 touched");
+            tileFlip4(box4);
+            
+        }
+        else if(touches[0].x>246 && touches[0].x<372 && touches[0].y>199 && touches[0].y<322 ){
+            console.log("tile 1 touched");
+            tileFlip5(box5);
+            
+        }
+        else if(touches[0].x>396 && touches[0].x<520 && touches[0].y>199 && touches[0].y<322 ){
+            console.log("tile 1 touched");
+            tileFlip6(box6);
+            
+        }
+
+        else if(touches[0].x>97 && touches[0].x<220 && touches[0].y>348 && touches[0].y<467 ){
+            console.log("tile 1 touched");
+            tileFlip7(box7);
+            
+        }
+        else if(touches[0].x>246 && touches[0].x<372 && touches[0].y>348 && touches[0].y<467 ){
+            console.log("tile 1 touched");
+            tileFlip8(box8);
+            
+        }
+        else if(touches[0].x>396 && touches[0].x<520 && touches[0].y>348 && touches[0].y<467 ){
+            console.log("tile 1 touched");
+            tileFlip9(box9);
+            
+        }
+        else if(touches[0].x>97 && touches[0].x<220 && touches[0].y>498 && touches[0].y<621 ){
+            console.log("tile 1 touched");
+            tileFlip10(box10);
+            
+        }
+        else if(touches[0].x>246 && touches[0].x<372 && touches[0].y>498 && touches[0].y<621 ){
+            console.log("tile 1 touched");
+            tileFlip11(box11);
+            
+        }
+        else if(touches[0].x>396 && touches[0].x<520 && touches[0].y>498 && touches[0].y<621 ){
+            console.log("tile 1 touched");
+            tileFlip12(box12);
+            
+        }
+
+    }
+
+
+   
+    fill("black")
 
     //text formatting
     textSize(40);
@@ -66,6 +136,7 @@ function draw() {
         text("Time: " + timer + "sec", 220, 390);
         text("Score: " + score, 250, 430);
     }
+
 
     //checking if there is a mouse event
     box1.onMousePressed = function () {
@@ -163,6 +234,7 @@ function draw() {
 
     }
     drawSprites();
+   
 }
 
 function commonImage() {
@@ -253,4 +325,84 @@ function answer() {
 function timerfun() {
     if (score != 6)
         timer++;
+}
+function tileFlip1(box) {
+    commonImage();
+    touch.play();
+    box.addImage(img1);
+    a = 1;
+    setInterval(function () { a = 0 }, 5000);
+}
+function tileFlip2(box) {
+    touch.play();
+        commonImage();
+        box.addImage(img5);
+        a = 5;
+        setInterval(function () { a = 0 }, 5000);
+}
+function tileFlip3(box) {
+    touch.play();
+    commonImage();
+    box.addImage(img2);
+    a = 2;
+    setInterval(function () { a = 0 }, 5000);
+}
+function tileFlip4(box) {
+    touch.play();
+        commonImage();
+        box.addImage(img3);
+        a = 3;
+        setInterval(function () { a = 0 }, 5000);
+}
+function tileFlip5(box) {
+    touch.play();
+        commonImage();
+        box.addImage(img4);
+        a = 4;
+        setInterval(function () { a = 0 }, 5000);
+}
+function tileFlip6(box) {
+    touch.play();
+        commonImage();
+        box.addImage(img1);
+        b = 1;
+}
+function tileFlip7(box) {
+    touch.play();
+    commonImage();
+    box.addImage(img2);
+    b = 2;
+}
+function tileFlip8(box) {
+    touch.play();
+        commonImage();
+        box.addImage(img3);
+        b = 3;
+}
+function tileFlip9(box) {
+    touch.play();
+    commonImage();
+    box.addImage(img4);
+
+    b = 4;
+}
+function tileFlip10(box) {
+    touch.play();
+    commonImage();
+    box.addImage(img6);
+    a = 6;
+    setInterval(function () { a = 0 }, 5000);
+}
+function tileFlip11(box) {
+    touch.play();
+        commonImage();
+        box.addImage(img5);
+        b = 5;
+}
+function tileFlip12(box) {
+    touch.play();
+    commonImage();
+    box.addImage(img6);
+
+    b = 6;
 }
